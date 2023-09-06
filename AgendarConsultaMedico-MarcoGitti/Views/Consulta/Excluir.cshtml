@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ConsultaModel>
+
+@{
+    ViewData["title"] = "Excluir Consulta";
+}
+
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-5">
+        <h1>Excluir Consultas</h1>
+    </div>
+
+    <div class="mb-5 text-center">
+        <h1 class="text-light">Tem certeza de que deseja excluir suas consultas médicas?</h1>
+    </div>
+
+    <form method="post" asp-controller="Consulta" asp-action="Editar">
+        <input type="hidden" />
+        <div class="form-group">
+            <label for="Paciente" class="text-light">Nome Completo</label>
+            <input type="text" class="form-control" id="Paciente" placeholder="Insira seu Nome Completo" />
+        </div>
+
+        <div class="form-group">
+            <label for="DataHora" class="text-light">Selecione o dia</label>
+            <input type="date" class="form-control" id="dataConsulta" placeholder="Data da Consulta" />
+        </div>
+
+        <div class="form-group">
+            <label for="Medico" class="text-light">Selecione o Médico</label>
+            <input type="text" class="form-control" id="medicoAtendimento" placeholder="Nome do seu/sua Médico(a)" />
+        </div>
+
+        <div class="d-flex gap-5 mt-5">
+            <button type="submit" class="btn btn-success w-25">Enviar</button>
+        </div>
+
+
+    </form>
+</div>

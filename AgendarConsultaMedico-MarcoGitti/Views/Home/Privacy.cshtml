@@ -1,0 +1,33 @@
+﻿@model IEnumerable<ConsultaModel>
+
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-5">
+            <h1>Suas Consultas</h1>
+            <a asp-controller="Consulta" asp-action="Cadastrar">Cadastrar Nova Consulta</a>
+        </div>
+
+        <table class="table table-striped table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Data e Hora</th>
+                    <th scope="col">Paciente</th>
+                    <th scope="col">Médico</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null)
+                {
+                    @foreach (var consulta in Model)
+                    {
+                        <tr>
+                            <th scope="row">@consulta.Id</th>
+                            <td>@consulta.DataHora</td>
+                            <td>@consulta.Paciente</td>
+                            <td>@consulta.Medico</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
